@@ -1,6 +1,7 @@
-FROM n8nio/n8n:latest
+FROM node:20-bookworm-slim
 
-USER root
-RUN apt-get update && apt-get install -y ffmpeg
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+RUN npm install -g n8n
 
-USER node
+EXPOSE 5678
+CMD ["n8n"]
