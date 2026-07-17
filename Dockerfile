@@ -1,6 +1,6 @@
 FROM node:20-bookworm-slim
 
-RUN apt-get update && apt-get install -y ffmpeg python3 python3-pip && \
+RUN apt-get update && apt-get install -y ffmpeg python3 python3-pip curl && \
     pip3 install --break-system-packages edge-tts && \
     rm -rf /var/lib/apt/lists/*
 
